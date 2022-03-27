@@ -11,6 +11,7 @@
   inputs.src-ggplotnim-v0_5_0.ref   = "refs/tags/v0.5.0";
   inputs.src-ggplotnim-v0_5_0.owner = "Vindaar";
   inputs.src-ggplotnim-v0_5_0.repo  = "ggplotnim";
+  inputs.src-ggplotnim-v0_5_0.dir   = "";
   inputs.src-ggplotnim-v0_5_0.type  = "github";
   
   inputs."ginger".owner = "nim-nix-pkgs";

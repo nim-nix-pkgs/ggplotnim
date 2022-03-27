@@ -11,6 +11,7 @@
   inputs.src-ggplotnim-master.ref   = "refs/heads/master";
   inputs.src-ggplotnim-master.owner = "Vindaar";
   inputs.src-ggplotnim-master.repo  = "ggplotnim";
+  inputs.src-ggplotnim-master.dir   = "";
   inputs.src-ggplotnim-master.type  = "github";
   
   inputs."ginger".owner = "nim-nix-pkgs";

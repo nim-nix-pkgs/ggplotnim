@@ -11,6 +11,7 @@
   inputs.src-ggplotnim-v0_2_0.ref   = "refs/tags/v0.2.0";
   inputs.src-ggplotnim-v0_2_0.owner = "Vindaar";
   inputs.src-ggplotnim-v0_2_0.repo  = "ggplotnim";
+  inputs.src-ggplotnim-v0_2_0.dir   = "";
   inputs.src-ggplotnim-v0_2_0.type  = "github";
   
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
