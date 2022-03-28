@@ -11,8 +11,15 @@
   inputs.src-ggplotnim-master.ref   = "refs/heads/master";
   inputs.src-ggplotnim-master.owner = "Vindaar";
   inputs.src-ggplotnim-master.repo  = "ggplotnim";
-  inputs.src-ggplotnim-master.dir   = "";
   inputs.src-ggplotnim-master.type  = "github";
+  
+  inputs."github.com/vindaar/seqmath".owner = "nim-nix-pkgs";
+  inputs."github.com/vindaar/seqmath".ref   = "master";
+  inputs."github.com/vindaar/seqmath".repo  = "github.com/vindaar/seqmath";
+  inputs."github.com/vindaar/seqmath".dir   = "";
+  inputs."github.com/vindaar/seqmath".type  = "github";
+  inputs."github.com/vindaar/seqmath".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."github.com/vindaar/seqmath".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."ginger".owner = "nim-nix-pkgs";
   inputs."ginger".ref   = "master";
@@ -53,6 +60,14 @@
   inputs."webview".type  = "github";
   inputs."webview".inputs.nixpkgs.follows = "nixpkgs";
   inputs."webview".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  inputs."scinim".owner = "nim-nix-pkgs";
+  inputs."scinim".ref   = "master";
+  inputs."scinim".repo  = "scinim";
+  inputs."scinim".dir   = "v0_2_3";
+  inputs."scinim".type  = "github";
+  inputs."scinim".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."scinim".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 

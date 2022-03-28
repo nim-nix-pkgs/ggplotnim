@@ -11,8 +11,15 @@
   inputs.src-ggplotnim-v0_2_11.ref   = "refs/tags/v0.2.11";
   inputs.src-ggplotnim-v0_2_11.owner = "Vindaar";
   inputs.src-ggplotnim-v0_2_11.repo  = "ggplotnim";
-  inputs.src-ggplotnim-v0_2_11.dir   = "";
   inputs.src-ggplotnim-v0_2_11.type  = "github";
+  
+  inputs."github.com/vindaar/seqmath".owner = "nim-nix-pkgs";
+  inputs."github.com/vindaar/seqmath".ref   = "master";
+  inputs."github.com/vindaar/seqmath".repo  = "github.com/vindaar/seqmath";
+  inputs."github.com/vindaar/seqmath".dir   = "";
+  inputs."github.com/vindaar/seqmath".type  = "github";
+  inputs."github.com/vindaar/seqmath".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."github.com/vindaar/seqmath".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."ginger".owner = "nim-nix-pkgs";
   inputs."ginger".ref   = "master";
