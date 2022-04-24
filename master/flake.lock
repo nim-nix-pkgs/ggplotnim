@@ -540,11 +540,11 @@
       },
       "locked": {
         "dir": "v0_3_10",
-        "lastModified": 1650756987,
-        "narHash": "sha256-QrczuVxEkBHw9Da81T7WngrlaQ9RlGymFeR2IV4ezpg=",
+        "lastModified": 1650760900,
+        "narHash": "sha256-u4WvYSPnXhfGDK6GXkPVvGAhvbiGxvXUkPYZznc5MLU=",
         "owner": "nim-nix-pkgs",
         "repo": "ginger",
-        "rev": "c4953914925ca2e945285b9fc0da524df5dc169e",
+        "rev": "ecbf703c3912f51157f72c5f03d6dfc53264d2ea",
         "type": "github"
       },
       "original": {
