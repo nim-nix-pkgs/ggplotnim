@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-ggplotnim-v0_3_26.flake = false;
-  inputs.src-ggplotnim-v0_3_26.ref   = "refs/tags/v0.3.26";
-  inputs.src-ggplotnim-v0_3_26.owner = "Vindaar";
-  inputs.src-ggplotnim-v0_3_26.repo  = "ggplotnim";
-  inputs.src-ggplotnim-v0_3_26.type  = "github";
+  inputs.src-ggplotnim-v0_5_4.flake = false;
+  inputs.src-ggplotnim-v0_5_4.ref   = "refs/tags/v0.5.4";
+  inputs.src-ggplotnim-v0_5_4.owner = "Vindaar";
+  inputs.src-ggplotnim-v0_5_4.repo  = "ggplotnim";
+  inputs.src-ggplotnim-v0_5_4.type  = "github";
   
   inputs."github-vindaar-seqmath".owner = "nim-nix-pkgs";
   inputs."github-vindaar-seqmath".ref   = "master";
@@ -29,13 +29,13 @@
   inputs."ginger".inputs.nixpkgs.follows = "nixpkgs";
   inputs."ginger".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
-  inputs."shell".owner = "nim-nix-pkgs";
-  inputs."shell".ref   = "master";
-  inputs."shell".repo  = "shell";
-  inputs."shell".dir   = "v0_5_0";
-  inputs."shell".type  = "github";
-  inputs."shell".inputs.nixpkgs.follows = "nixpkgs";
-  inputs."shell".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  inputs."datamancer".owner = "nim-nix-pkgs";
+  inputs."datamancer".ref   = "master";
+  inputs."datamancer".repo  = "datamancer";
+  inputs."datamancer".dir   = "v0_3_8";
+  inputs."datamancer".type  = "github";
+  inputs."datamancer".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."datamancer".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
   inputs."arraymancer".owner = "nim-nix-pkgs";
   inputs."arraymancer".ref   = "master";
@@ -45,6 +45,14 @@
   inputs."arraymancer".inputs.nixpkgs.follows = "nixpkgs";
   inputs."arraymancer".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
+  inputs."shell".owner = "nim-nix-pkgs";
+  inputs."shell".ref   = "master";
+  inputs."shell".repo  = "shell";
+  inputs."shell".dir   = "v0_5_0";
+  inputs."shell".type  = "github";
+  inputs."shell".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."shell".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   inputs."webview".owner = "nim-nix-pkgs";
   inputs."webview".ref   = "master";
   inputs."webview".repo  = "webview";
@@ -53,16 +61,24 @@
   inputs."webview".inputs.nixpkgs.follows = "nixpkgs";
   inputs."webview".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
   
+  inputs."scinim".owner = "nim-nix-pkgs";
+  inputs."scinim".ref   = "master";
+  inputs."scinim".repo  = "scinim";
+  inputs."scinim".dir   = "v0_2_3";
+  inputs."scinim".type  = "github";
+  inputs."scinim".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."scinim".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ggplotnim-v0_3_26"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ggplotnim-v0_5_4"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-ggplotnim-v0_3_26";
+    src  = deps."src-ggplotnim-v0_5_4";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
