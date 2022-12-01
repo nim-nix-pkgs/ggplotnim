@@ -7,11 +7,11 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
-  inputs.src-ggplotnim-v0_4_10.flake = false;
-  inputs.src-ggplotnim-v0_4_10.ref   = "refs/tags/v0.4.10";
-  inputs.src-ggplotnim-v0_4_10.owner = "Vindaar";
-  inputs.src-ggplotnim-v0_4_10.repo  = "ggplotnim";
-  inputs.src-ggplotnim-v0_4_10.type  = "github";
+  inputs.src-ggplotnim-v0_5_6.flake = false;
+  inputs.src-ggplotnim-v0_5_6.ref   = "refs/tags/v0.5.6";
+  inputs.src-ggplotnim-v0_5_6.owner = "Vindaar";
+  inputs.src-ggplotnim-v0_5_6.repo  = "ggplotnim";
+  inputs.src-ggplotnim-v0_5_6.type  = "github";
   
   inputs."github-vindaar-seqmath".owner = "nim-nix-pkgs";
   inputs."github-vindaar-seqmath".ref   = "master";
@@ -24,7 +24,7 @@
   inputs."ginger".owner = "nim-nix-pkgs";
   inputs."ginger".ref   = "master";
   inputs."ginger".repo  = "ginger";
-  inputs."ginger".dir   = "v0_3_10";
+  inputs."ginger".dir   = "v0_3_13";
   inputs."ginger".type  = "github";
   inputs."ginger".inputs.nixpkgs.follows = "nixpkgs";
   inputs."ginger".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
@@ -72,13 +72,13 @@
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
   let 
     lib  = flakeNimbleLib.lib;
-    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ggplotnim-v0_4_10"];
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-ggplotnim-v0_5_6"];
     over = if builtins.pathExists ./override.nix 
            then { override = import ./override.nix; }
            else { };
   in lib.mkRefOutput (over // {
     inherit self nixpkgs ;
-    src  = deps."src-ggplotnim-v0_4_10";
+    src  = deps."src-ggplotnim-v0_5_6";
     deps = builtins.removeAttrs deps args;
     meta = builtins.fromJSON (builtins.readFile ./meta.json);
   } );
